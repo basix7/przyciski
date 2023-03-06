@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+        }
+
+        .button {
+            background-color: transparent;
+            font-size: 17px;
+            color: white;
+            padding: 0.6em 1.5em;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            text-align: center;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            display: block;
+            inset: 0;
+            border-radius: 100px;
+            border: 1px solid white;
+            left: -25%;
+            width: 150%;
+            opacity: 0;
+            clip-path: polygon(0% 0%, 0% 100%, 1% 100%, 1% 0, 99% 0, 99% 100%, 100% 100%, 100% 0%);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .button:hover::before {
+            border: 1px solid white;
+            width: 100%;
+            left: 0%;
+            opacity: 1;
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+        }
+    </style>
+</head>
+
+<body style="display: flex; align-items: center; justify-content: center;">
+    <button class="button">
+        O NAS
+    </button>
+    <button class="button">
+        DO OSIĄGNIĘCIA
+    </button>
+</body>
+
+</html>
